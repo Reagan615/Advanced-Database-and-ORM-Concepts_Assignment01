@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced-Database-and-ORM-Concepts_Assignment 1", "Advanced-Database-and-ORM-Concepts_Assignment 1\Advanced-Database-and-ORM-Concepts_Assignment 1.csproj", "{D17BC68D-ED23-4624-8F63-032768D1973A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D17BC68D-ED23-4624-8F63-032768D1973A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17BC68D-ED23-4624-8F63-032768D1973A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17BC68D-ED23-4624-8F63-032768D1973A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17BC68D-ED23-4624-8F63-032768D1973A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3A2823B-286F-4028-8767-FA3B925B0162}
+	EndGlobalSection
+EndGlobal
