@@ -1,0 +1,25 @@
+﻿@model List<Advanced_Database_and_ORM_Concepts_Assignment_1.Models.Song>
+
+<h1>All Songs</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Album</th>
+            <th>Runtime</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Song s in Model)
+        {
+          <tr>
+              <td>@s.Title</td>
+              <td>@s.Album.Title</td>
+              <td>@TimeSpan.FromSeconds(s.DurationSeconds).ToString("hh\\:mm\\:ss")</td>
+          </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index">Back to Playlists</a>

@@ -1,0 +1,31 @@
+﻿@model List<Artist>
+
+
+<h1>Artists</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Albums</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (Artist artist in Model)
+    {
+       <tr>
+           <td>@artist.Name</td>
+           <td>
+              <ul>
+            @foreach (var albumGroup in artist.SongContributors.GroupBy(c => c.Song.Album))
+            {
+               <li>
+                   <a href="@Url.Action("Details", "Albums", new { id = albumGroup.Key.Id })">@albumGroup.Key.Title </a>
+               </li>
+            }
+              </ul>
+           </td>
+       </tr>
+    }
+    </tbody>
+</table>

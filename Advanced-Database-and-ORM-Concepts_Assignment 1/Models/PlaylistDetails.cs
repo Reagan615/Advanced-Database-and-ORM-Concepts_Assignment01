@@ -2,5 +2,9 @@
 {
     public class PlaylistDetails
     {
+        public Playlist Playlist { get; set; }
+        public int TotalRuntimeSeconds { get; set; }
+        public int NumSongs { get; set; }
+        public List<SongDetails> SongDetails { get; set; }
     }
 }

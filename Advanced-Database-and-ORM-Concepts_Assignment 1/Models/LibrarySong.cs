@@ -2,5 +2,18 @@
 {
     public class LibrarySong
     {
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public int SongId { get; set; }
+        public LibrarySong()
+        {
+
+        }
+        public LibrarySong(int userId, int songId)
+        {
+
+            UserId = userId;
+            SongId = songId;
+        }
     }
 }

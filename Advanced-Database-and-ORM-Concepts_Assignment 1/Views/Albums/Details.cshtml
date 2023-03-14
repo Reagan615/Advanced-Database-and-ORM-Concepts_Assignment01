@@ -1,0 +1,32 @@
+﻿@model Advanced_Database_and_ORM_Concepts_Assignment_1.Models.Album
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>@Model.Title</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Artists</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Song song in Model.Songs)
+        {
+           <tr>
+               <td>@song.Title</td>
+               <td>
+                   <ul>
+                   @foreach (SongContributor songContributor in song.SongContributors)
+                   {
+                     <li>@songContributor.Artist.Name</li>
+                   }
+                   </ul>
+               </td>
+           </tr>
+        }
+    </tbody>
+</table>
