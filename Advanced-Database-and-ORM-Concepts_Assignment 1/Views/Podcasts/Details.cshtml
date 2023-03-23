@@ -1,0 +1,36 @@
+﻿@model Advanced_Database_and_ORM_Concepts_Assignment_1.Models.ViewModels.EpisodeListVM
+
+<h1>@Model.Episodes.Count() Episodes</h1>
+
+@using (Html.BeginForm("Details", "Podcasts"))
+{
+    @Html.DropDownListFor(a => a.SortFunction, new List<SelectListItem>
+    {
+        new SelectListItem { Text = "Chronological", Value = "chronological" },
+        new SelectListItem { Text = "Reverse-Chronological", Value = "reverse-chronological" }
+    }, "Select Sort Option")
+
+        <button type="submit">Sort</button>
+}
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Air Date</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Episode episode in Model.Episodes)
+        {
+            <tr>
+                <td>@episode.Title</td>
+                <td>@episode.AirDate.ToShortDateString()</td>
+                <td>@TimeSpan.FromSeconds(episode.DurationSeconds).ToString("hh\\:mm\\:ss")</td>
+            </tr>
+            
+        }
+    </tbody>
+</table>
