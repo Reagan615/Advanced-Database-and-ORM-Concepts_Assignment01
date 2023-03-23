@@ -4,6 +4,7 @@ using Advanced_Database_and_ORM_Concepts_Assignment_1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advanced_Database_and_ORM_Concepts_Assignment_1.Migrations
 {
     [DbContext(typeof(Advanced_Database_and_ORM_Concepts_Assignment_1Context))]
-    partial class Advanced_Database_and_ORM_Concepts_Assignment_1ContextModelSnapshot : ModelSnapshot
+    [Migration("20230321174838_Validation")]
+    partial class Validation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -23,6 +23,9 @@ namespace Advanced_Database_and_ORM_Concepts_Assignment_1.Data
         public DbSet<Song> Songs { get; set; } = default!;
         public DbSet<SongContributor> SongContributors { get; set; } = default!;
         public DbSet<User> Users { get; set; } = default!;
+        public DbSet<Podcast> Podcast { get; set; } = default!;
+        public DbSet<Episode> Episodes { get; set; } = default!;
+        public DbSet<ListenerList> ListenerList { get; set; } = default!;
 
     }
 }

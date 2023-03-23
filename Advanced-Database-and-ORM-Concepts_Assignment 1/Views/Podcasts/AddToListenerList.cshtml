@@ -1,0 +1,21 @@
+﻿@model Advanced_Database_and_ORM_Concepts_Assignment_1.Models.ViewModels.AddToListenerListVM
+
+
+<h2>Add to listener list</h2>
+
+<div>
+    <p><strong>Podcast:</strong> @Model.Podcast.PodcastTitle</p>
+</div>
+
+<form asp-action="AddToListenerList" method="post">
+    <div>
+        <label for="listenerListId">Select listener list:</label>
+        <select id="listenerListId"  name="listenerListId" class="form-control">
+            @foreach (ListenerList list in Model.ListenerLists)
+            {
+                    <option value="@list.Id">@list.ListenerListName</option>
+            }
+        </select>
+    </div>
+    <button type="submit">Add to listener list</button>
+</form>

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Advanced_Database_and_ORM_Concepts_Assignment_1.Models.Podcast>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Podcasts</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Podcast Title
+            </th>
+            <th>
+                Episodes
+            </th>
+            <th>
+                Listener Lists
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.PodcastTitle
+            </td>
+            <td>
+                @foreach(Episode e in item.Episodes)
+                {
+                    @e.Title
+                }
+            </td>
+            <td>
+                @foreach(ListenerList l in item.ListenerLists)
+                {
+                    @l.ListenerListName
+                }
+            </td>
+
+            <td>
+                <a asp-action="AddToListenerList" asp-route-id="@item.Id">Add to Listener List</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

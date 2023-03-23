@@ -191,7 +191,89 @@ namespace Advanced_Database_and_ORM_Concepts_Assignment_1.Data
 
             await context.SaveChangesAsync();
 
+            Episode episode01 = new Episode("Episode01", 541, DateTime.Now, new HashSet<Artist>() { context.Artists.Find(1) });
+            Episode episode02 = new Episode("Episode02", 682, DateTime.Now.AddDays(-1), new HashSet<Artist>() { context.Artists.Find(2) });
+            Episode episode03 = new Episode("Episode03", 723, DateTime.Now.AddDays(-5), new HashSet<Artist>() { context.Artists.Find(3) });
+            Episode episode04 = new Episode("Episode04", 811, DateTime.Now.AddDays(2), new HashSet<Artist>() { context.Artists.Find(1) });
+            Episode episode05 = new Episode("Episode05", 998, DateTime.Now.AddDays(-2), new HashSet<Artist>() { context.Artists.Find(2) });
+            Episode episode06 = new Episode("Episode06", 120, DateTime.Now.AddDays(3), new HashSet<Artist>() { context.Artists.Find(3) });
+            Episode episode07 = new Episode("Episode07", 210, DateTime.Now.AddDays(-4), new HashSet<Artist>() { context.Artists.Find(1) });
+            Episode episode08 = new Episode("Episode08", 220, DateTime.Now, new HashSet<Artist>() { context.Artists.Find(2) });
+            Episode episode09 = new Episode("Episode09", 198, DateTime.Now.AddDays(-2), new HashSet<Artist>() { context.Artists.Find(3) });
+            Episode episode10 = new Episode("Episode10", 320, DateTime.Now, new HashSet<Artist>() { context.Artists.Find(1) });
+            Episode episode11 = new Episode("Episode11", 100, DateTime.Now, new HashSet<Artist>() { context.Artists.Find(2) });
+            Episode episode12 = new Episode("Episode12", 180, DateTime.Now.AddDays(-3), new HashSet<Artist>() { context.Artists.Find(3) });
 
+            if (!context.Episodes.Any())
+            {
+                context.Episodes.Add(episode01);
+                context.Episodes.Add(episode02);
+                context.Episodes.Add(episode03);
+                context.Episodes.Add(episode04);
+                context.Episodes.Add(episode05);
+                context.Episodes.Add(episode06);
+                context.Episodes.Add(episode07);
+                context.Episodes.Add(episode08);
+                context.Episodes.Add(episode09);
+                context.Episodes.Add(episode10);
+                context.Episodes.Add(episode11);
+                context.Episodes.Add(episode12);
+
+            }
+
+            await context.SaveChangesAsync();
+
+            Podcast podcast01 = new Podcast("PodcastOne");
+            Podcast podcast02 = new Podcast("PodcastTwo");
+            Podcast podcast03 = new Podcast("PodcastThree");
+            Podcast podcast04 = new Podcast("PodcastFour");
+
+            if (!context.Podcast.Any())
+            {
+
+                podcast01.Episodes.Add(episode01);
+                podcast01.Episodes.Add(episode02);
+                podcast01.Episodes.Add(episode03);
+
+                podcast02.Episodes.Add(episode04);
+                podcast02.Episodes.Add(episode05);
+                podcast02.Episodes.Add(episode06);
+
+                podcast03.Episodes.Add(episode07);
+                podcast03.Episodes.Add(episode08);
+                podcast03.Episodes.Add(episode09);
+
+                podcast04.Episodes.Add(episode10);
+                podcast04.Episodes.Add(episode11);
+                podcast04.Episodes.Add(episode12);
+
+                context.Podcast.Add(podcast01);
+                context.Podcast.Add(podcast02);
+                context.Podcast.Add(podcast03);
+                context.Podcast.Add(podcast04);
+
+            }
+
+            await context.SaveChangesAsync();
+
+            ListenerList listenerList01 = new ListenerList("ListenerListOne");
+            ListenerList listenerList02 = new ListenerList("ListenerListTwo");
+
+            if (!context.ListenerList.Any())
+            {
+                listenerList01.Podcasts.Add(podcast01);
+                listenerList01.Podcasts.Add(podcast02);
+                listenerList01.Podcasts.Add(podcast03);
+                listenerList02.Podcasts.Add(podcast04);
+
+
+                context.ListenerList.Add(listenerList01);
+                context.ListenerList.Add(listenerList02);
+
+
+            }
+
+            await context.SaveChangesAsync();
 
             context.SaveChanges();
         }

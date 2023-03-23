@@ -1,0 +1,24 @@
+﻿@model Advanced_Database_and_ORM_Concepts_Assignment_1.Models.ListenerList
+
+<h1>@Model.ListenerListName</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Podcast Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Podcast podcast in Model.Podcasts)
+        {
+            <tr>
+                <td>@podcast.PodcastTitle</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
